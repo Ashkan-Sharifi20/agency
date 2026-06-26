@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shxrifi Studio — Web Design & Development</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0b;
@@ -26,8 +28,8 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 300;
+    font-family: 'Geist', sans-serif;
+    font-weight: 400;
     overflow-x: hidden;
     line-height: 1.6;
   }
@@ -62,9 +64,9 @@
   }
 
   .logo {
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: -0.5px;
     color: var(--text);
     text-decoration: none;
@@ -168,11 +170,11 @@
   }
 
   .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(48px, 9vw, 132px);
-    font-weight: 300;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(48px, 9vw, 110px);
+    font-weight: 800;
     line-height: 0.95;
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     margin-bottom: 40px;
     max-width: 1100px;
   }
@@ -247,7 +249,7 @@
   }
 
   .marquee-item {
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-size: 28px;
     font-style: italic;
     font-weight: 300;
@@ -278,10 +280,10 @@
   }
 
   .section-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(36px, 5vw, 68px);
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -2px;
     line-height: 1;
   }
 
@@ -336,9 +338,9 @@
   }
 
   .service-name {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 300;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
     letter-spacing: -0.5px;
   }
 
@@ -365,6 +367,36 @@
     padding: 5px 11px;
     border-radius: 100px;
   }
+
+  /* WORK CARD BACKGROUND MOCKUPS */
+  .work-card { position: relative; overflow: hidden; }
+
+  .card-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.18;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    transform: scale(1.02);
+  }
+
+  .work-card:hover .card-bg { opacity: 0.28; }
+
+  .card-bg-inner {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform-origin: top left;
+    transform: scale(0.52);
+    pointer-events: none;
+  }
+
+  .work-card-top,
+  .work-card-body,
+  .work-card-glow,
+  .work-arrow { position: relative; z-index: 2; }
 
   /* WORK */
   .work {
@@ -431,10 +463,10 @@
   .work-card-body { position: relative; z-index: 2; }
 
   .work-title {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(32px, 4vw, 56px);
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
     line-height: 1;
     margin-bottom: 16px;
   }
@@ -485,6 +517,123 @@
     transform: rotate(-45deg);
   }
 
+  /* REVIEWS SCROLL */
+  .reviews-section {
+    border-top: 1px solid var(--line);
+    padding: 100px 0;
+    overflow: hidden;
+  }
+
+  .reviews-head {
+    text-align: center;
+    padding: 0 56px;
+    margin-bottom: 64px;
+  }
+
+  .reviews-head p {
+    font-size: 16px;
+    color: #666;
+    max-width: 480px;
+    margin: 16px auto 0;
+    line-height: 1.7;
+  }
+
+  .reviews-track-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reviews-track-wrap::before,
+  .reviews-track-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .reviews-track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, #f5f3ef, transparent);
+  }
+
+  .reviews-track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, #f5f3ef, transparent);
+  }
+
+  .reviews-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: reviewsScroll 50s linear infinite;
+  }
+
+  .reviews-track:hover { animation-play-state: paused; }
+
+  .review-card {
+    background: #ffffff;
+    border: 1px solid #e8e4de;
+    border-radius: 16px;
+    padding: 28px 32px;
+    width: 320px;
+    flex-shrink: 0;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .review-card:hover { border-color: #c8a96a; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+
+  .review-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .review-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: #f5f3ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    border: 1px solid #e8e4de;
+  }
+
+  .review-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+  }
+
+  .review-role {
+    font-size: 11px;
+    color: #888;
+  }
+
+  .review-stars {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .review-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.75;
+  }
+
+  @keyframes reviewsScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
   /* PROCESS / ABOUT */
   .about {
     border-top: 1px solid var(--line);
@@ -495,10 +644,10 @@
   }
 
   .about-left h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(32px, 4.5vw, 60px);
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 800;
+    letter-spacing: -2px;
     line-height: 1.05;
   }
 
@@ -521,7 +670,7 @@
   }
 
   .about-stat-num {
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-size: 48px;
     font-weight: 300;
     color: var(--text);
@@ -564,10 +713,10 @@
   }
 
   .contact h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(44px, 8vw, 110px);
-    font-weight: 300;
-    letter-spacing: -2px;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(44px, 7vw, 96px);
+    font-weight: 800;
+    letter-spacing: -3px;
     line-height: 1;
     margin-bottom: 48px;
     position: relative;
@@ -601,7 +750,7 @@
 
   .contact-email {
     margin-top: 40px;
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-size: clamp(20px, 3vw, 32px);
     font-style: italic;
     color: var(--muted);
@@ -627,7 +776,7 @@
   }
 
   .footer-left {
-    font-family: 'Fraunces', serif;
+    font-family: 'Geist', sans-serif;
     font-size: 28px;
     font-style: italic;
     color: var(--text);
@@ -687,7 +836,481 @@
     border-top: 1px solid var(--line);
   }
 
-  /* FAQ */
+  /* TRANSFORMATION SECTION */
+  .transform-section {
+    border-top: 1px solid var(--line);
+    padding: 120px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .transform-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px; height: 500px;
+    background: radial-gradient(ellipse, rgba(200,169,106,0.05) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .transform-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .transform-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hint-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: hintPulse 1.5s ease infinite;
+  }
+
+  /* FLOATING CARD */
+  .transform-card {
+    background: #0d0d0f;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(200,169,106,0.08),
+      0 40px 120px rgba(0,0,0,0.7),
+      0 0 60px rgba(200,169,106,0.04);
+    position: relative;
+  }
+
+  /* CARD TOP BAR */
+  .card-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: #111113;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .card-dots {
+    display: flex;
+    gap: 7px;
+  }
+
+  .card-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+  }
+
+  .card-topbar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .label-before-top { color: #e05252; }
+  .label-after-top { color: var(--accent); }
+
+  .card-topbar-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* SLIDER INSIDE CARD */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    cursor: ew-resize;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  /* AFTER SITE */
+  .site-after {
+    position: absolute;
+    inset: 0;
+    background: #0a0a0b;
+    overflow: hidden;
+  }
+
+  .after-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: rgba(10,10,11,0.95);
+  }
+
+  .after-nav-logo {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    color: #f0ede8;
+    font-style: italic;
+  }
+
+  .after-nav-links { display: flex; gap: 20px; }
+
+  .after-nav-links span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .after-nav-btn {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #0a0a0b;
+    background: #f0ede8;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+
+  .after-hero {
+    padding: 40px 32px 24px;
+  }
+
+  .after-hero-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a96a;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .after-hero-tag::before { content: ''; width: 16px; height: 1px; background: #c8a96a; }
+
+  .after-h1 {
+    font-family: 'Geist', sans-serif;
+    font-size: 44px;
+    font-weight: 300;
+    color: #f0ede8;
+    line-height: 1;
+    letter-spacing: -1.5px;
+    margin-bottom: 14px;
+  }
+
+  .after-h1 em { font-style: italic; color: #c8a96a; }
+
+  .after-p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.38);
+    max-width: 340px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    font-family: 'Geist', sans-serif;
+    font-weight: 300;
+  }
+
+  .after-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #c8a96a;
+    color: #0a0a0b;
+    padding: 9px 20px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    font-family: 'Geist', sans-serif;
+  }
+
+  .after-services-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin: 20px 32px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .after-svc {
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.015);
+    border-right: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .after-svc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #c8a96a;
+    margin-bottom: 6px;
+  }
+
+  .after-svc-name {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    color: #f0ede8;
+    margin-bottom: 5px;
+  }
+
+  .after-svc-desc {
+    font-size: 10px;
+    color: rgba(255,255,255,0.28);
+    line-height: 1.6;
+    font-family: 'Geist', sans-serif;
+  }
+
+  .after-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .after-strip-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.18);
+    text-transform: uppercase;
+  }
+
+  .after-strip-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #c8a96a;
+    opacity: 0.4;
+  }
+
+  /* BEFORE SITE */
+  .site-before {
+    position: absolute;
+    inset: 0;
+    background: #f0f0f0;
+    overflow: hidden;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .before-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: #003399;
+  }
+
+  .before-logo {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .before-navlinks { display: flex; gap: 12px; }
+  .before-navlinks span {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #aabfff;
+    text-decoration: underline;
+  }
+
+  .before-hero-ugly {
+    background: linear-gradient(180deg, #003399 0%, #0055cc 100%);
+    padding: 28px 16px;
+    text-align: center;
+  }
+
+  .before-h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 2px 2px 0px #000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .before-p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 14px;
+  }
+
+  .before-btn-ugly {
+    display: inline-block;
+    background: #ff6600;
+    color: white;
+    padding: 9px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: 3px solid #cc4400;
+    text-transform: uppercase;
+  }
+
+  .before-ticker {
+    background: #ffff00;
+    padding: 5px 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #cc0000;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid #cc0000;
+    border-bottom: 2px solid #cc0000;
+  }
+
+  .before-body-ugly {
+    padding: 14px 16px;
+    background: #f0f0f0;
+  }
+
+  .before-stitle {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #003399;
+    border-bottom: 3px solid #ff6600;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .before-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .before-svc-ugly {
+    background: white;
+    border: 2px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .before-svc-icon { font-size: 20px; margin-bottom: 3px; }
+
+  .before-svc-name-ugly {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  .before-counter-ugly {
+    background: #003399;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    padding: 6px 10px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .before-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .before-table th {
+    background: #003399;
+    color: white;
+    padding: 5px 7px;
+    text-align: left;
+  }
+
+  .before-table td {
+    padding: 4px 7px;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+
+  .before-table tr:nth-child(even) td { background: #e8e8e8; }
+
+  .before-footer-ugly {
+    background: #333;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    text-align: center;
+    padding: 7px;
+  }
+
+  /* DIVIDER LINE */
+  .t-divider {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: rgba(255,255,255,0.9);
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 0 12px rgba(255,255,255,0.3);
+    pointer-events: none;
+  }
+
+  /* CARD BOTTOM BAR */
+  .card-bottombar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: #111113;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .card-bottom-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .bottom-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+  }
+
+  @keyframes beforeFade {
+    0%   { opacity: 1; }
+    35%  { opacity: 1; }
+    50%  { opacity: 0; }
+    85%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes hintPulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
   .faq {
     border-top: 1px solid var(--line);
     padding: 120px 56px;
@@ -695,7 +1318,6 @@
     grid-template-columns: 1fr 1.3fr;
     gap: 80px;
     align-items: start;
-    font-size: xx-large;
   }
 
   .faq-left {
@@ -704,10 +1326,10 @@
   }
 
   .faq-left h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 300;
-    letter-spacing: -1px;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 800;
+    letter-spacing: -2px;
     line-height: 1.02;
     margin-bottom: 36px;
   }
@@ -833,6 +1455,10 @@
     .about { grid-template-columns: 1fr; gap: 40px; padding: 80px 20px; }
     .faq { grid-template-columns: 1fr; gap: 40px; padding: 80px 20px; }
     .faq-left { position: static; }
+    #transformation { padding: 60px 20px; }
+    #transformation > .reveal { grid-template-columns: 1fr; min-height: auto; }
+    #transformation > .reveal > div:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 36px 24px; }
+    #transformation > .reveal > div:last-child { min-height: 400px; }
     .contact { padding: 100px 20px; }
     footer { padding: 48px 20px; grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-left { font-size: 22px; }
@@ -968,6 +1594,101 @@
   </div>
 </section>
 
+<!-- TRANSFORMATION -->
+<section id="transformation" style="border-top:1px solid var(--line);padding:100px 56px;">
+
+  <!-- REZZY-STYLE BOX: left text, right animation -->
+  <div class="reveal" style="background:#111113;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:560px;box-shadow:0 40px 100px rgba(0,0,0,0.5);">
+
+    <!-- LEFT: Text -->
+    <div style="padding:56px 48px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px;"><span style="width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;animation:hintPulse 1.5s ease infinite;"></span>The Difference</div>
+      <h2 style="font-family:'Geist',sans-serif;font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-1.5px;line-height:1.05;color:var(--text);margin-bottom:20px;">We don't just<br>build sites.<br>We <em style="font-style:italic;color:var(--accent);">transform</em> them.</h2>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:320px;">Every client we take on starts with an audit. We show you exactly what's wrong and how we'd fix it — then we build something that actually works.</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--accent);font-size:14px;margin-top:1px;">›</span><span style="font-size:14px;color:var(--muted);line-height:1.5;">Modern, fast, mobile-first design</span></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--accent);font-size:14px;margin-top:1px;">›</span><span style="font-size:14px;color:var(--muted);line-height:1.5;">Built from scratch — no templates</span></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--accent);font-size:14px;margin-top:1px;">›</span><span style="font-size:14px;color:var(--muted);line-height:1.5;">SEO and conversion optimized</span></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="color:var(--accent);font-size:14px;margin-top:1px;">›</span><span style="font-size:14px;color:var(--muted);line-height:1.5;">Ongoing care and support</span></div>
+      </div>
+      <a href="#contact" style="margin-top:40px;display:inline-flex;align-items:center;gap:10px;background:var(--text);color:var(--bg);padding:14px 28px;border-radius:100px;font-size:13px;letter-spacing:0.5px;text-decoration:none;width:fit-content;transition:background 0.3s;" onmouseover="this.style.background='#c8a96a'" onmouseout="this.style.background='var(--text)'">Start a Project <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- RIGHT: Before/After animation -->
+    <div style="position:relative;overflow:hidden;">
+      <!-- Browser chrome bar -->
+      <div style="background:#1a1a1c;padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;">
+        <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28c840;"></div></div>
+        <div style="flex:1;background:#2a2a2c;border-radius:5px;padding:4px 10px;display:flex;align-items:center;gap:6px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10z"/></svg><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.25);">maison.ca</span></div>
+      </div>
+
+      <!-- Animation container -->
+      <div style="position:relative;height:100%;min-height:500px;overflow:hidden;">
+
+        <!-- AFTER — white modern (always underneath) -->
+        <div style="position:absolute;inset:0;background:#fff;font-family:Arial,sans-serif;overflow-y:auto;z-index:1;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#fff;border-bottom:1px solid #f0f0f0;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="width:28px;height:28px;background:#2563eb;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;">M</div><span style="font-size:14px;font-weight:700;color:#111;">Maison</span></div>
+            <div style="display:flex;gap:2px;"><span style="font-size:11px;color:#555;padding:5px 10px;border-radius:16px;">Services</span><span style="font-size:11px;color:#555;padding:5px 10px;border-radius:16px;">Portfolio</span><span style="font-size:11px;color:#555;padding:5px 10px;border-radius:16px;">About</span></div>
+            <div style="background:#2563eb;color:white;padding:7px 16px;border-radius:16px;font-size:11px;font-weight:600;">Book Now →</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#eff6ff,#dbeafe);padding:36px 20px 28px;text-align:center;">
+            <div style="display:inline-block;background:#dbeafe;color:#2563eb;font-size:10px;font-weight:600;padding:4px 12px;border-radius:16px;margin-bottom:12px;">🏠 Toronto's #1 Interior Studio</div>
+            <div style="font-size:32px;font-weight:800;color:#0f172a;line-height:1.1;margin-bottom:10px;letter-spacing:-1px;">Your Dream Home<br><span style="color:#2563eb;">Starts Here.</span></div>
+            <div style="font-size:12px;color:#64748b;max-width:300px;margin:0 auto 16px;line-height:1.7;">Professional interior design & renovation across Toronto and the GTA.</div>
+            <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;">
+              <div style="background:#2563eb;color:white;padding:10px 20px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:0 4px 12px rgba(37,99,235,0.35);">Get Free Quote</div>
+              <div style="background:white;color:#111;padding:10px 20px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid #e2e8f0;">View Portfolio</div>
+            </div>
+            <div style="display:flex;gap:10px;justify-content:center;">
+              <div style="background:white;border-radius:8px;padding:6px 12px;display:flex;align-items:center;gap:5px;box-shadow:0 1px 4px rgba(0,0,0,0.08);"><span style="color:#f59e0b;font-size:11px;">★★★★★</span><span style="font-size:10px;font-weight:600;color:#111;">5.0</span><span style="font-size:10px;color:#94a3b8;">Google</span></div>
+              <div style="background:white;border-radius:8px;padding:6px 12px;display:flex;align-items:center;gap:5px;box-shadow:0 1px 4px rgba(0,0,0,0.08);">🏆<span style="font-size:10px;font-weight:600;color:#111;">120+</span><span style="font-size:10px;color:#94a3b8;">Projects</span></div>
+            </div>
+          </div>
+          <div style="padding:14px 20px;background:#fff;">
+            <div style="font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">What We Offer</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+              <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;"><div style="font-size:18px;margin-bottom:4px;">🛋️</div><div style="font-size:11px;font-weight:700;color:#0f172a;margin-bottom:2px;">Interior Design</div><div style="font-size:10px;color:#94a3b8;">Your style, realized</div></div>
+              <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:12px;"><div style="font-size:18px;margin-bottom:4px;">🔨</div><div style="font-size:11px;font-weight:700;color:#1d4ed8;margin-bottom:2px;">Renovation</div><div style="font-size:10px;color:#60a5fa;">Full transformations</div></div>
+              <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px;"><div style="font-size:18px;margin-bottom:4px;">💬</div><div style="font-size:11px;font-weight:700;color:#0f172a;margin-bottom:2px;">Consultation</div><div style="font-size:10px;color:#94a3b8;">Free first session</div></div>
+            </div>
+          </div>
+          <div style="background:#0f172a;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;"><span style="font-size:11px;font-weight:700;color:white;">Maison</span><span style="font-size:10px;color:#475569;">hello@maison.ca</span><span style="font-size:10px;color:#475569;">© 2026</span></div>
+          <div style="position:absolute;top:52px;right:12px;background:rgba(37,99,235,0.9);color:white;padding:5px 12px;border-radius:16px;font-size:10px;font-weight:600;">✓ After</div>
+        </div>
+
+        <!-- BEFORE — bad site (fades on top) -->
+        <div style="position:absolute;inset:0;background:#f9f7f2;font-family:Arial,sans-serif;overflow-y:auto;z-index:2;animation:beforeFade 8s ease-in-out infinite;">
+          <div style="background:#1e3a6e;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:24px;height:24px;background:#f5c518;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;color:#1e3a6e;">M</div><div style="font-size:12px;font-weight:bold;color:white;text-transform:uppercase;letter-spacing:1px;">Maison Home Services</div></div>
+            <div style="display:flex;gap:10px;"><span style="font-size:10px;color:#a0b8e0;text-decoration:underline;">Home</span><span style="font-size:10px;color:#a0b8e0;text-decoration:underline;">Services</span><span style="font-size:10px;color:#a0b8e0;text-decoration:underline;">About</span><span style="font-size:10px;color:#a0b8e0;text-decoration:underline;">Contact</span></div>
+          </div>
+          <div style="background:linear-gradient(to bottom,#2d5a9e,#1e3a6e);padding:24px 16px;text-align:center;">
+            <div style="font-family:'Times New Roman',serif;font-size:22px;font-weight:bold;color:#f5c518;text-shadow:1px 1px 3px rgba(0,0,0,0.5);margin-bottom:6px;">Welcome to Maison Home Services</div>
+            <div style="font-size:11px;color:#ccd9ee;margin-bottom:12px;max-width:360px;margin-left:auto;margin-right:auto;">Professional home services in Toronto. Quality design and renovation at affordable prices!</div>
+            <div style="display:inline-flex;gap:8px;"><div style="background:#f5c518;color:#1e3a6e;padding:7px 16px;font-size:11px;font-weight:bold;border:2px solid #d4a800;text-transform:uppercase;">Get Free Quote</div><div style="color:#f5c518;padding:7px 14px;font-size:11px;border:2px solid #f5c518;">Learn More</div></div>
+          </div>
+          <div style="background:#f9f7f2;padding:10px 14px;">
+            <div style="background:#fff3cd;border:1px solid #ffc107;padding:6px 10px;margin-bottom:10px;display:flex;gap:6px;align-items:center;"><span>📢</span><span style="font-size:10px;color:#856404;font-weight:bold;">SPECIAL OFFER: 10% OFF this month! Call (416) 555-0182!</span></div>
+            <div style="font-size:13px;font-weight:bold;color:#1e3a6e;border-bottom:2px solid #f5c518;padding-bottom:3px;display:inline-block;margin-bottom:8px;">OUR SERVICES</div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0 10px;">
+              <div style="background:white;border:1px solid #ddd;padding:8px;text-align:center;"><div style="font-size:18px;margin-bottom:3px;">🛋️</div><div style="font-size:10px;font-weight:bold;color:#333;">Interior Design</div></div>
+              <div style="background:white;border:1px solid #ddd;padding:8px;text-align:center;"><div style="font-size:18px;margin-bottom:3px;">🔧</div><div style="font-size:10px;font-weight:bold;color:#333;">Renovation</div></div>
+              <div style="background:white;border:1px solid #ddd;padding:8px;text-align:center;"><div style="font-size:18px;margin-bottom:3px;">📋</div><div style="font-size:10px;font-weight:bold;color:#333;">Consultation</div></div>
+            </div>
+            <div style="background:#e8f0fe;border-left:3px solid #1e3a6e;padding:7px 10px;margin-bottom:8px;"><div style="font-size:10px;font-weight:bold;color:#1e3a6e;margin-bottom:2px;">Why Choose Us?</div><div style="font-size:10px;color:#444;line-height:1.7;">✓ 15+ yrs experience · ✓ Licensed & Insured · ✓ Free Estimates</div></div>
+            <div style="background:#333;color:#888;font-size:9px;text-align:center;padding:5px;">Copyright © 2017 | Designed by TorontoWebDesigns</div>
+          </div>
+          <div style="position:absolute;top:44px;right:12px;background:rgba(30,58,110,0.9);color:white;padding:5px 12px;border-radius:16px;font-size:10px;font-weight:600;">✕ Before</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
 <!-- WORK -->
 <section class="work" id="work">
   <div class="section-head reveal">
@@ -979,87 +1700,279 @@
   </div>
 
   <div class="work-grid">
-    <!-- FEATURED — CITY KEBAB -->
-    <a href="#" class="work-card featured reveal">
-      <div class="work-card-glow" style="background:radial-gradient(ellipse at 70% 20%, rgba(200,169,106,0.12) 0%, transparent 60%);"></div>
+
+    <!-- CITY KEBAB — Dark Persian aesthetic -->
+    <a href="#" class="work-card featured reveal" style="background:#1a1008;border-color:rgba(201,151,58,0.2);">
+      <div class="card-bg">
+        <div class="card-bg-inner" style="background:#1a1008;font-family:'Georgia',serif;width:192%;">
+          <!-- Mock City Kebab homepage -->
+          <div style="background:rgba(26,16,8,0.9);padding:14px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,151,58,0.2);">
+            <div style="font-family:'Georgia',serif;font-size:16px;color:#c9973a;letter-spacing:3px;">CITY KEBAB</div>
+            <div style="display:flex;gap:20px;"><span style="font-size:10px;color:rgba(245,240,232,0.5);letter-spacing:1px;">MENU</span><span style="font-size:10px;color:rgba(245,240,232,0.5);letter-spacing:1px;">IRAN</span><span style="font-size:10px;color:rgba(245,240,232,0.5);letter-spacing:1px;">ABOUT</span></div>
+          </div>
+          <div style="height:320px;background:radial-gradient(ellipse at 30% 50%,rgba(158,43,37,0.4) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(201,151,58,0.2) 0%,transparent 50%),#1a1008;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:40px;">
+            <div style="font-size:10px;letter-spacing:4px;color:#c9973a;margin-bottom:16px;border:1px solid rgba(201,151,58,0.3);padding:6px 16px;">AUTHENTIC PERSIAN CUISINE · TORONTO</div>
+            <div style="font-family:'Georgia',serif;font-size:56px;font-weight:300;color:#f5f0e8;line-height:1;letter-spacing:-1px;">City</div>
+            <div style="font-family:'Georgia',serif;font-size:56px;font-style:italic;color:#e8c06a;line-height:1;letter-spacing:-1px;margin-bottom:20px;">Kebab</div>
+            <div style="font-size:11px;letter-spacing:2px;color:rgba(245,240,232,0.5);">PERSIAN FOOD · MIDTOWN TORONTO · HALAL</div>
+            <div style="display:flex;gap:12px;margin-top:24px;">
+              <div style="background:#9e2b25;color:#f5f0e8;padding:10px 24px;font-size:10px;letter-spacing:2px;">ORDER NOW</div>
+              <div style="border:1px solid rgba(245,240,232,0.3);color:#f5f0e8;padding:10px 24px;font-size:10px;letter-spacing:2px;">VIEW MENU</div>
+            </div>
+          </div>
+          <div style="background:#1a1008;display:flex;justify-content:center;gap:48px;padding:20px;border-top:1px solid rgba(201,151,58,0.1);border-bottom:1px solid rgba(201,151,58,0.1);">
+            <div style="text-align:center;"><div style="font-size:10px;letter-spacing:2px;color:rgba(245,240,232,0.5);">RATING</div><div style="font-family:'Georgia',serif;font-size:20px;color:#c9973a;">4.9★</div></div>
+            <div style="text-align:center;"><div style="font-size:10px;letter-spacing:2px;color:rgba(245,240,232,0.5);">HOURS</div><div style="font-family:'Georgia',serif;font-size:14px;color:#f5f0e8;">12–9 PM</div></div>
+            <div style="text-align:center;"><div style="font-size:10px;letter-spacing:2px;color:rgba(245,240,232,0.5);">HALAL</div><div style="font-family:'Georgia',serif;font-size:14px;color:#f5f0e8;">✓</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card-glow" style="background:radial-gradient(ellipse at 70% 20%, rgba(200,169,106,0.15) 0%, transparent 60%);"></div>
       <div class="work-card-top">
-        <span class="work-tag">Restaurant · Featured</span>
+        <span class="work-tag" style="color:#c9973a;">Restaurant · Featured</span>
         <span class="work-year">2026</span>
       </div>
       <div class="work-card-body">
-        <h3 class="work-title">City <em>Kebab</em></h3>
-        <p class="work-desc">A full multi-page experience for an authentic Persian restaurant in Midtown Toronto — complete with menu, cultural storytelling, and a signature daily Faal feature.</p>
+        <h3 class="work-title" style="color:#f5f0e8;">City <em>Kebab</em></h3>
+        <p class="work-desc">A full multi-page experience for an authentic Persian restaurant in Midtown Toronto — menu, cultural storytelling, and a signature daily Faal feature.</p>
         <div class="work-meta">
-          <span>Web Design</span>
-          <span>Development</span>
-          <span>5 Pages</span>
-          <span>Custom Feature</span>
+          <span>Web Design</span><span>Development</span><span>5 Pages</span><span>Custom Faal</span>
         </div>
       </div>
-      <div class="work-arrow">
+      <div class="work-arrow" style="border-color:rgba(201,151,58,0.3);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </div>
     </a>
 
-    <!-- PROJECT 2 -->
-    <a href="#" class="work-card reveal">
-      <div class="work-card-glow" style="background:radial-gradient(ellipse at 30% 30%, rgba(120,140,200,0.1) 0%, transparent 60%);"></div>
-      <div class="work-card-top">
-        <span class="work-tag">E-Commerce</span>
-        <span class="work-year">2026</span>
-      </div>
-      <div class="work-card-body">
-        <h3 class="work-title">Atelier <em>Goods</em></h3>
-        <p class="work-desc">A minimal online storefront for a boutique lifestyle brand.</p>
-        <div class="work-meta">
-          <span>Shopify</span>
-          <span>Branding</span>
+    <!-- ATELIER GOODS — Clean minimal e-commerce -->
+    <a href="#" class="work-card reveal" style="background:#faf9f7;border-color:#e8e4de;">
+      <div class="card-bg">
+        <div class="card-bg-inner" style="background:#faf9f7;font-family:'Helvetica Neue',Arial,sans-serif;width:192%;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid #e8e4de;">
+            <div style="font-size:18px;font-weight:300;color:#111;letter-spacing:6px;text-transform:uppercase;">Atelier</div>
+            <div style="display:flex;gap:16px;"><span style="font-size:10px;color:#999;letter-spacing:1px;text-transform:uppercase;">Shop</span><span style="font-size:10px;color:#999;letter-spacing:1px;text-transform:uppercase;">About</span><span style="font-size:10px;color:#999;letter-spacing:1px;text-transform:uppercase;">Journal</span></div>
+            <div style="font-size:10px;color:#111;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid #111;padding-bottom:1px;">Bag (0)</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;height:260px;">
+            <div style="padding:32px 24px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="font-size:9px;letter-spacing:3px;color:#b89a6a;text-transform:uppercase;margin-bottom:14px;">New Collection · 2026</div>
+              <div style="font-size:40px;font-weight:300;color:#111;line-height:1.1;margin-bottom:12px;">Objects<br><span style="font-style:italic;">Worth<br>Keeping.</span></div>
+              <div style="font-size:11px;color:#999;line-height:1.6;margin-bottom:20px;">Curated goods for the considered home.</div>
+              <div style="display:flex;gap:10px;align-items:center;">
+                <div style="background:#111;color:#faf9f7;padding:9px 20px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;">Shop Now</div>
+                <div style="font-size:10px;color:#999;">Explore →</div>
+              </div>
+            </div>
+            <div style="background:#f0ece4;display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;">
+                <div style="width:80px;height:100px;background:#ddd8ce;margin:0 auto 8px;"></div>
+                <div style="font-size:10px;color:#999;letter-spacing:1px;">Ceramic Vase · $89</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #e8e4de;">
+            <div style="padding:14px;border-right:1px solid #e8e4de;"><div style="width:100%;height:60px;background:#e8e4de;margin-bottom:8px;"></div><div style="font-size:10px;color:#111;">Linen Throw</div><div style="font-size:10px;color:#b89a6a;">$145</div></div>
+            <div style="padding:14px;border-right:1px solid #e8e4de;"><div style="width:100%;height:60px;background:#d4cfc8;margin-bottom:8px;"></div><div style="font-size:10px;color:#111;">Stone Bowl</div><div style="font-size:10px;color:#b89a6a;">$62</div></div>
+            <div style="padding:14px;"><div style="width:100%;height:60px;background:#c8c2b8;margin-bottom:8px;"></div><div style="font-size:10px;color:#111;">Wax Candle</div><div style="font-size:10px;color:#b89a6a;">$38</div></div>
+          </div>
         </div>
       </div>
-      <div class="work-arrow">
+      <div class="work-card-glow" style="background:radial-gradient(ellipse at 30% 30%, rgba(180,154,106,0.08) 0%, transparent 60%);"></div>
+      <div class="work-card-top">
+        <span class="work-tag" style="color:#b89a6a;">E-Commerce</span>
+        <span class="work-year" style="color:#999;">2026</span>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title" style="color:#111;">Atelier <em style="color:#b89a6a;">Goods</em></h3>
+        <p class="work-desc" style="color:#888;">A clean minimal storefront for a curated lifestyle brand. Shopify build with custom product layouts and brand identity.</p>
+        <div class="work-meta">
+          <span style="border-color:#e8e4de;color:#888;">Shopify</span><span style="border-color:#e8e4de;color:#888;">Branding</span><span style="border-color:#e8e4de;color:#888;">E-Commerce</span>
+        </div>
+      </div>
+      <div class="work-arrow" style="border-color:#e8e4de;color:#111;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </div>
     </a>
 
-    <!-- PROJECT 3 -->
-    <a href="#" class="work-card reveal">
-      <div class="work-card-glow" style="background:radial-gradient(ellipse at 70% 30%, rgba(120,200,160,0.1) 0%, transparent 60%);"></div>
-      <div class="work-card-top">
-        <span class="work-tag">Portfolio</span>
-        <span class="work-year">2025</span>
-      </div>
-      <div class="work-card-body">
-        <h3 class="work-title">Studio <em>Noir</em></h3>
-        <p class="work-desc">A cinematic portfolio site for a creative photographer.</p>
-        <div class="work-meta">
-          <span>Web Design</span>
-          <span>Animation</span>
+    <!-- STUDIO NOIR — Dark cinematic photography -->
+    <a href="#" class="work-card reveal" style="background:#080808;border-color:rgba(255,255,255,0.06);">
+      <div class="card-bg">
+        <div class="card-bg-inner" style="background:#080808;font-family:'Georgia',serif;width:192%;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px;">
+            <div style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.9);letter-spacing:4px;text-transform:uppercase;">Studio Noir</div>
+            <div style="display:flex;gap:20px;"><span style="font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;">Work</span><span style="font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;">About</span><span style="font-size:9px;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;">Contact</span></div>
+          </div>
+          <div style="height:280px;background:linear-gradient(160deg,#1a1a1a 0%,#080808 60%);display:flex;align-items:flex-end;padding:28px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:20px;right:20px;width:120px;height:160px;background:linear-gradient(160deg,#2a2a2a,#111);"></div>
+            <div style="position:absolute;top:40px;right:50px;width:80px;height:110px;background:linear-gradient(160deg,#222,#0a0a0a);"></div>
+            <div style="position:relative;z-index:2;">
+              <div style="font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-bottom:10px;">Photography · Toronto</div>
+              <div style="font-family:'Georgia',serif;font-size:44px;font-weight:400;color:white;line-height:1;margin-bottom:8px;">Moments<br><span style="font-style:italic;color:rgba(255,255,255,0.5);">in light.</span></div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;">Available for editorial & commercial work</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:2px;">
+            <div style="height:50px;background:#1c1c1c;"></div>
+            <div style="height:50px;background:#141414;"></div>
+            <div style="height:50px;background:#1a1a1a;"></div>
+            <div style="height:50px;background:#111;"></div>
+          </div>
+          <div style="padding:14px 24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);">
+            <div style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.25);text-transform:uppercase;">© 2025 Studio Noir</div>
+            <div style="font-size:9px;color:rgba(255,255,255,0.25);">hello@studionoir.ca</div>
+          </div>
         </div>
       </div>
-      <div class="work-arrow">
+      <div class="work-card-glow" style="background:radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.04) 0%, transparent 60%);"></div>
+      <div class="work-card-top">
+        <span class="work-tag" style="color:rgba(255,255,255,0.5);">Portfolio</span>
+        <span class="work-year" style="color:rgba(255,255,255,0.3);">2025</span>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title" style="color:white;">Studio <em style="color:rgba(255,255,255,0.4);">Noir</em></h3>
+        <p class="work-desc" style="color:rgba(255,255,255,0.4);">A cinematic portfolio site for a Toronto photographer. Dark editorial aesthetic with smooth gallery transitions.</p>
+        <div class="work-meta">
+          <span style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);">Web Design</span><span style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);">Animation</span><span style="border-color:rgba(255,255,255,0.08);color:rgba(255,255,255,0.4);">Portfolio</span>
+        </div>
+      </div>
+      <div class="work-arrow" style="border-color:rgba(255,255,255,0.1);color:white;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </div>
     </a>
 
-    <!-- PROJECT 4 -->
-    <a href="#" class="work-card reveal">
-      <div class="work-card-glow" style="background:radial-gradient(ellipse at 30% 30%, rgba(200,120,120,0.1) 0%, transparent 60%);"></div>
-      <div class="work-card-top">
-        <span class="work-tag">Local Business</span>
-        <span class="work-year">2025</span>
-      </div>
-      <div class="work-card-body">
-        <h3 class="work-title">Bloom <em>& Co.</em></h3>
-        <p class="work-desc">A warm, inviting site for a neighbourhood florist with online ordering.</p>
-        <div class="work-meta">
-          <span>Web Design</span>
-          <span>SEO</span>
+    <!-- BLOOM & CO — Warm bright florist -->
+    <a href="#" class="work-card reveal" style="background:#fff8f5;border-color:#f0ddd6;">
+      <div class="card-bg">
+        <div class="card-bg-inner" style="background:#fff8f5;font-family:'Georgia',serif;width:192%;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:#fff;border-bottom:1px solid #f0ddd6;">
+            <div style="display:flex;align-items:center;gap:8px;"><div style="font-size:18px;">🌸</div><div style="font-size:15px;font-weight:400;color:#8b3a52;letter-spacing:1px;">Bloom & Co.</div></div>
+            <div style="display:flex;gap:16px;"><span style="font-size:10px;color:#c4896e;text-transform:uppercase;letter-spacing:1px;">Shop</span><span style="font-size:10px;color:#c4896e;text-transform:uppercase;letter-spacing:1px;">Occasions</span><span style="font-size:10px;color:#c4896e;text-transform:uppercase;letter-spacing:1px;">About</span></div>
+            <div style="background:#8b3a52;color:white;padding:7px 16px;border-radius:20px;font-size:10px;letter-spacing:1px;">Order Now</div>
+          </div>
+          <div style="background:linear-gradient(135deg,#fff0eb 0%,#fde8e0 100%);padding:28px 24px;text-align:center;">
+            <div style="font-size:9px;letter-spacing:3px;color:#c4896e;text-transform:uppercase;margin-bottom:12px;">Toronto · Est. 2021</div>
+            <div style="font-family:'Georgia',serif;font-size:38px;font-weight:400;color:#3d1a24;line-height:1.1;margin-bottom:10px;">Fresh Flowers<br><span style="font-style:italic;color:#8b3a52;">for every moment.</span></div>
+            <div style="font-size:12px;color:#b87060;line-height:1.7;max-width:280px;margin:0 auto 18px;">Seasonal bouquets, wedding florals & same-day delivery across Toronto.</div>
+            <div style="display:flex;gap:10px;justify-content:center;">
+              <div style="background:#8b3a52;color:white;padding:10px 22px;border-radius:20px;font-size:11px;">Shop Bouquets</div>
+              <div style="border:1px solid #c4896e;color:#8b3a52;padding:10px 22px;border-radius:20px;font-size:11px;">Wedding Florals</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px;background:#fff;">
+            <div style="background:#fde8e0;border-radius:8px;padding:10px;text-align:center;"><div style="font-size:22px;margin-bottom:4px;">🌹</div><div style="font-size:10px;color:#8b3a52;font-weight:600;">Roses</div><div style="font-size:10px;color:#c4896e;">From $45</div></div>
+            <div style="background:#fdf0e8;border-radius:8px;padding:10px;text-align:center;"><div style="font-size:22px;margin-bottom:4px;">🌷</div><div style="font-size:10px;color:#8b3a52;font-weight:600;">Tulips</div><div style="font-size:10px;color:#c4896e;">From $35</div></div>
+            <div style="background:#fde8ec;border-radius:8px;padding:10px;text-align:center;"><div style="font-size:22px;margin-bottom:4px;">💐</div><div style="font-size:10px;color:#8b3a52;font-weight:600;">Bouquets</div><div style="font-size:10px;color:#c4896e;">From $65</div></div>
+          </div>
         </div>
       </div>
-      <div class="work-arrow">
+      <div class="work-card-glow" style="background:radial-gradient(ellipse at 30% 30%, rgba(200,120,120,0.08) 0%, transparent 60%);"></div>
+      <div class="work-card-top">
+        <span class="work-tag" style="color:#c4896e;">Local Business</span>
+        <span class="work-year" style="color:#c4896e;">2025</span>
+      </div>
+      <div class="work-card-body">
+        <h3 class="work-title" style="color:#3d1a24;">Bloom <em style="color:#8b3a52;">& Co.</em></h3>
+        <p class="work-desc" style="color:#b87060;">A warm boutique florist site with online ordering, seasonal collections, and same-day delivery integration.</p>
+        <div class="work-meta">
+          <span style="border-color:#f0ddd6;color:#c4896e;">Web Design</span><span style="border-color:#f0ddd6;color:#c4896e;">E-Commerce</span><span style="border-color:#f0ddd6;color:#c4896e;">SEO</span>
+        </div>
+      </div>
+      <div class="work-arrow" style="border-color:#f0ddd6;color:#8b3a52;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
       </div>
     </a>
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" style="background:var(--bg);">
+  <div style="background:#f5f3ef;border-radius:24px;margin:0 40px;padding:80px 0 60px;overflow:hidden;">
+  <div class="reviews-head reveal" style="color:#1a1a1a;">
+    <div class="section-num" style="justify-content:center;display:flex;">( 02.5 ) — Client Love</div>
+    <h2 style="font-family:'Geist',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;letter-spacing:-1px;line-height:1.05;color:#1a1a1a;margin-top:12px;margin-bottom:0;">Don't just take our<br><em style="font-style:italic;color:#c8a96a;">word for it</em></h2>
+    <p>Real feedback from real clients across Toronto and the GTA.</p>
+  </div>
+
+  <div class="reviews-track-wrap">
+    <div class="reviews-track">
+
+      <!-- Set 1 -->
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🍕</div><div><div class="review-name">Marco D.</div><div class="review-role">Owner, Pizzeria San Marco · Toronto</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Before Shxrifi Studio we had zero web presence. Now customers find us on Google every day and our orders have gone up noticeably. Worth every dollar."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">💇</div><div><div class="review-name">Layla K.</div><div class="review-role">Founder, Maison Beauty · Markham</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They understood our brand instantly. The site looks premium, loads fast, and our clients always compliment how professional it feels. Couldn't ask for more."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🏠</div><div><div class="review-name">James W.</div><div class="review-role">Agent, Westside Realty · Mississauga</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fast, professional, and they actually listened. I described what I wanted and they delivered something even better. The whole process took less than two weeks."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🍖</div><div><div class="review-name">Ali R.</div><div class="review-role">Owner, City Kebab · Toronto</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our old website was embarrassing. Now it reflects the quality of our food. Customers walk in and say they found us online — that never happened before."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🌸</div><div><div class="review-name">Priya S.</div><div class="review-role">Owner, Bloom Florals · North York</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I was nervous about the process but they made it so easy. They handled everything — design, hosting, even my Google listing. Truly a full-service team."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🔧</div><div><div class="review-name">Behdad M.</div><div class="review-role">HVAC Technician · Toronto & GTA</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The QR code on my business card now links to a proper portfolio. Clients scan it on the spot and I've already closed two jobs because of it. Game changer."</p>
+      </div>
+
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🍕</div><div><div class="review-name">Marco D.</div><div class="review-role">Owner, Pizzeria San Marco · Toronto</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Before Shxrifi Studio we had zero web presence. Now customers find us on Google every day and our orders have gone up noticeably. Worth every dollar."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">💇</div><div><div class="review-name">Layla K.</div><div class="review-role">Founder, Maison Beauty · Markham</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They understood our brand instantly. The site looks premium, loads fast, and our clients always compliment how professional it feels. Couldn't ask for more."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🏠</div><div><div class="review-name">James W.</div><div class="review-role">Agent, Westside Realty · Mississauga</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fast, professional, and they actually listened. I described what I wanted and they delivered something even better. The whole process took less than two weeks."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🍖</div><div><div class="review-name">Ali R.</div><div class="review-role">Owner, City Kebab · Toronto</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our old website was embarrassing. Now it reflects the quality of our food. Customers walk in and say they found us online — that never happened before."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🌸</div><div><div class="review-name">Priya S.</div><div class="review-role">Owner, Bloom Florals · North York</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I was nervous about the process but they made it so easy. They handled everything — design, hosting, even my Google listing. Truly a full-service team."</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">🔧</div><div><div class="review-name">Behdad M.</div><div class="review-role">HVAC Technician · Toronto & GTA</div></div></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The QR code on my business card now links to a proper portfolio. Clients scan it on the spot and I've already closed two jobs because of it. Game changer."</p>
+      </div>
+
+    </div>
+  </div>
   </div>
 </section>
 
